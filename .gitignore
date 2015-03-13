@@ -1,2 +1,3 @@
+# ignore temporary files created by vim 
 *.swo
 *.swp
