@@ -1,9 +1,5 @@
 language: cpp
-compiler: 
-    - gcc
-    - clang
-
-install: gem install bake-toolkit
+before_install: gem install bake-toolkit
 script: 
     - bake all_tests_gcc -v2 -a black
     - all_tests_gcc/all_tests_gcc.exe
