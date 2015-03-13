@@ -1,0 +1,56 @@
+Project {
+
+    Responsible {
+        Person "Nicola Coretti", email: "nico.coretti@gmail.com"
+    }
+
+    LibraryConfig libjep {
+        Files "source/**/*.cpp"
+        IncludeDir "include"
+        IncludeDir "libs/msgpack-c/include"
+    }
+
+    ExecutableConfig all_tests {
+    
+        Files "src/**/*.cpp"
+        Files "test/**/*.cpp"
+        IncludeDir "include"
+        IncludeDir "test/tests/include"
+        IncludeDir "test/mocks/include"
+        IncludeDir "test/fixtures/include"
+        IncludeDir "libs/gmock/fused-src"
+        IncludeDir "libs/msgpack-c/include"
+
+        Dependency "gmock", config: "lib"
+    }
+
+    ExecutableConfig all_tests_gcc, extends: all_tests {
+    
+        ArtifactName "all_tests_gcc.exe"
+
+        DefaultToolchain GCC {
+
+            Compiler CPP {
+                Flags "-O0 -g3 -Wall -fmessage-length=0"
+                Define "GTEST_USE_OWN_TR1_TUPLE=1"
+            } 
+        }
+    }
+
+    ExecutableConfig all_tests_clang, extends: all_tests {
+    
+        ArtifactName "all_tests_clang.exe"
+        
+        DefaultToolchain CLANG {
+
+            Compiler CPP, command: "clang++" {
+                Flags "-stdlib=libc++ -std=c++11 -O0 -g3 -Wall -fmessage-length=0"
+                Define "GTEST_USE_OWN_TR1_TUPLE=1"
+            } 
+        
+            Linker command: "clang++"{
+                Flags "-stdlib=libc++"
+            }
+        }
+    }
+}
