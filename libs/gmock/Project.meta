@@ -1,0 +1,12 @@
+Project {
+
+  Responsible {
+    Person "Nicola Coretti", email: "nico.coretti@gmail.com"
+  }
+
+  LibraryConfig lib {
+    Files "fused-src/**/*.cc"
+    IncludeDir "fused-src"
+  }
+
+}
