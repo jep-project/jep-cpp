@@ -1,4 +1,5 @@
-# jep-cpp
+# jep-cpp  
+[![Build Status](https://travis-ci.org/jep-project/jep-cpp.svg?branch=master)](https://travis-ci.org/jep-project/jep-cpp)
 JEP C++ Library
 
 Used Build Tool is the bake-toolkit aka bake.
