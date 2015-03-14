@@ -47,13 +47,13 @@ Project {
         
         DefaultToolchain CLANG {
 
-            Compiler CPP, command: "clang++" {
-                Flags "-stdlib=libc++ -std=c++11 -O0 -g3 -Wall -fmessage-length=0"
+            Compiler CPP {
+                Flags "-std=c++11 -lc++ -O0 -g3 -Wall -fmessage-length=0"
                 Define "GTEST_USE_OWN_TR1_TUPLE=1"
             } 
-        
-            Linker command: "clang++"{
-                Flags "-stdlib=libc++"
+
+            Linker {
+                Flags "-lpthread"
             }
         }
     }
