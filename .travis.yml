@@ -8,6 +8,5 @@ before_install:
 
 script: 
     - bake all_tests_gcc -v2 -a black
-    - all_tests_gcc/all_tests_gcc.exe
-    - ls
+    - build_all_tests_gcc/all_tests_gcc.exe
 
