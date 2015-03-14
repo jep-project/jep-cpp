@@ -34,6 +34,10 @@ Project {
                 Flags "-O0 -g3 -Wall -fmessage-length=0"
                 Define "GTEST_USE_OWN_TR1_TUPLE=1"
             } 
+
+            Linker {
+                Flags "-pthread"
+            }
         }
     }
 
